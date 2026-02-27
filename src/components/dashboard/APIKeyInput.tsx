@@ -6,7 +6,7 @@ import { ChevronLeft, ShieldAlert, Key, ChevronDown, Loader2 } from 'lucide-reac
 const F = '"Nunito", "Varela Round", sans-serif';
 const C = {
   bg: '#f5f0e8', card: '#fdf9f4', ink: '#2c2416', muted: '#7a6e62', faint: '#b0a898', border: '#e0d8cc',
-  sage: '#7a9e7e', sageLt: '#d4e8d6', sageBd: '#aed0b2', sageDeep: '#3d6b42', sagePill: '#eaf2eb',
+  sage: '#6b9ab8', sageLt: '#d4e5f2', sageBd: '#a8c5de', sageDeep: '#2d5a78', sagePill: '#eaf3fa',
   rose: '#c9867c', roseLt: '#f5dbd8', roseBd: '#ddb4ae', roseDeep: '#8f3d35', rosePill: '#faeeed',
   ochre: '#c9a96e', ochreLt: '#f5e8cc', ochreBd: '#e0c888', ochreDeep: '#7a5218', ochrePill: '#faf3e5',
   slate: '#6b7b8d', slateLt: '#d4dde8', slateBd: '#b0c0d0', slateDeep: '#3d5068', slatePill: '#edf1f5',
@@ -167,7 +167,7 @@ const APIKeyInput: React.FC<Props> = ({ onBack, onConnect }) => {
             border: 'none', cursor: apiKey ? 'pointer' : 'not-allowed',
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
           }}
-          whileHover={apiKey ? { background: '#3d6b42' } : {}}
+          whileHover={apiKey ? { background: '#2d5a78' } : {}}
           whileTap={apiKey ? { scale: 0.98 } : {}}
         >
           Connect Model →

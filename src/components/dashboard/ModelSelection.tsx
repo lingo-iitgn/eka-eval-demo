@@ -9,7 +9,7 @@ import {
 const F = '"Nunito", "Varela Round", sans-serif';
 const C = {
   bg: '#f5f0e8', card: '#fdf9f4', ink: '#2c2416', muted: '#7a6e62', faint: '#b0a898', border: '#e0d8cc',
-  sage: '#7a9e7e', sageLt: '#d4e8d6', sageBd: '#aed0b2', sageDeep: '#3d6b42', sagePill: '#eaf2eb',
+  sage: '#6b9ab8', sageLt: '#d4e5f2', sageBd: '#a8c5de', sageDeep: '#2d5a78', sagePill: '#eaf3fa',
   rose: '#c9867c', roseLt: '#f5dbd8', roseBd: '#ddb4ae', roseDeep: '#8f3d35', rosePill: '#faeeed',
   ochre: '#c9a96e', ochreLt: '#f5e8cc', ochreBd: '#e0c888', ochreDeep: '#7a5218', ochrePill: '#faf3e5',
   slate: '#6b7b8d', slateLt: '#d4dde8', slateBd: '#b0c0d0', slateDeep: '#3d5068', slatePill: '#edf1f5',
@@ -41,7 +41,7 @@ const inputBase = { background: C.bg, border: `1.5px solid ${C.border}`, color: 
 const PrimaryBtn: React.FC<{ onClick: () => void; disabled?: boolean; loading?: boolean; children: React.ReactNode }> = ({ onClick, disabled, loading, children }) => (
   <motion.button onClick={onClick} disabled={disabled}
     style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 14, background: disabled ? '#d0c8bc' : '#2c2416', color: '#fdf9f4', fontFamily: F, fontWeight: 800, fontSize: 14, border: 'none', cursor: disabled ? 'not-allowed' : 'pointer' }}
-    whileHover={!disabled ? { background: '#3d6b42', y: -1 } : {}} whileTap={!disabled ? { y: 0 } : {}}>
+    whileHover={!disabled ? { background: '#2d5a78', y: -1 } : {}} whileTap={!disabled ? { y: 0 } : {}}>
     {loading && <Loader2 size={15} className="animate-spin" />}
     {loading ? 'Initializing…' : children}
   </motion.button>
@@ -121,7 +121,7 @@ const ModelSelection: React.FC<ModelSelectionProps> = ({ onModelInitialized }) =
   if (selectedType === 'api') {
     const activeP = API_PROVIDERS.find(p => p.id === config.provider)!;
     return (
-      <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} style={{ maxWidth: 640, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 20 }}>
+      <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 20 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <BackBtn onClick={() => setSelectedType(null)} />
           <div>
@@ -187,7 +187,7 @@ const ModelSelection: React.FC<ModelSelectionProps> = ({ onModelInitialized }) =
   // ── HF / Local config ─────────────────────────────────────
   const typeInfo = MODEL_TYPES.find(t => t.id === selectedType)!;
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ maxWidth: 640, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 20 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <BackBtn onClick={() => setSelectedType(null)} />
         <div>
@@ -253,33 +253,33 @@ const ModelSelection: React.FC<ModelSelectionProps> = ({ onModelInitialized }) =
         )}
       </div>
 
-      {/* Error state */}
-      {error && (
-        <AnimatePresence>
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            {isLargeModel(config.identifier) ? (
-              <div style={{ borderRadius: 16, padding: 20, background: C.ochrePill, border: `1.5px solid ${C.ochreBd}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, color: C.ochreDeep, fontFamily: F }}>
-                  <Cpu size={18} /> GPU Resources Unavailable
-                </div>
-                <p style={{ fontSize: 13, color: C.ochreDeep, fontFamily: F, margin: 0 }}>
-                  Our hosted GPU cannot load models larger than 5B parameters. <strong>{config.identifier}</strong> exceeds current capacity.
-                </p>
-                <div style={{ padding: '10px 14px', borderRadius: 12, background: C.card, border: `1px solid ${C.ochreBd}`, display: 'flex', gap: 10 }}>
-                  <Terminal size={14} color={C.sage} style={{ flexShrink: 0, marginTop: 2 }} />
-                  <div>
-                    <p style={{ fontWeight: 800, fontSize: 13, color: C.ink, fontFamily: F, margin: '0 0 3px' }}>Run locally with eka-eval CLI</p>
-                    <a href="https://github.com/lingo-iitgn/eka-eval" target="_blank" rel="noopener noreferrer"
-                      style={{ fontFamily: 'monospace', fontSize: 12, color: C.sage, textDecoration: 'none' }}>
-                      github.com/lingo-iitgn/eka-eval
-                    </a>
-                  </div>
-                </div>
+      {/* Large model proactive warning */}
+      <AnimatePresence>
+        {isLargeModel(config.identifier) && (
+          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }}
+            style={{ borderRadius: 16, padding: 20, background: C.ochrePill, border: `1.5px solid ${C.ochreBd}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, color: C.ochreDeep, fontFamily: F }}>
+              <Cpu size={18} /> Larger models are currently not able to run
+            </div>
+            <p style={{ fontSize: 13, color: C.ochreDeep, fontFamily: F, margin: 0 }}>
+              Models above 5B parameters cannot run on the hosted instance. You can run them through the CLI or the open-source UI code.
+            </p>
+            <div style={{ padding: '10px 14px', borderRadius: 12, background: C.card, border: `1px solid ${C.ochreBd}`, display: 'flex', gap: 10 }}>
+              <Terminal size={14} color={C.sage} style={{ flexShrink: 0, marginTop: 2 }} />
+              <div>
+                <p style={{ fontWeight: 800, fontSize: 13, color: C.ink, fontFamily: F, margin: '0 0 3px' }}>Run via CLI or open-source UI</p>
+                <a href="https://github.com/lingo-iitgn/eka-eval-demo" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: 'monospace', fontSize: 12, color: C.sage, textDecoration: 'none' }}>
+                  github.com/lingo-iitgn/eka-eval-demo
+                </a>
               </div>
-            ) : <ErrorBox msg={error} />}
+            </div>
           </motion.div>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
+
+      {/* Error state */}
+      {error && <ErrorBox msg={error} />}
 
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <PrimaryBtn onClick={handleNext} disabled={isDisabled} loading={isLoading}>Continue to Benchmarks</PrimaryBtn>

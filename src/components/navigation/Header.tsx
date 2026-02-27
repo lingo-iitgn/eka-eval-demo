@@ -37,30 +37,30 @@ const Header: React.FC = () => {
         fontFamily: '"DM Sans", "Outfit", sans-serif',
       }}
     >
-      <div className="container mx-auto px-8 py-3.5">
+      <div className="container mx-auto px-10 py-5">
         <div className="flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center relative overflow-hidden"
-              style={{ background: '#d4e8d6', border: '1.5px solid #aed0b2' }}
+              className="w-11 h-11 rounded-xl flex items-center justify-center relative overflow-hidden"
+              style={{ background: '#d4e5f2', border: '1.5px solid #a8c5de' }}
             >
               {/* tiny leaf mark */}
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M9 15 C9 15 3 11 3 6 C3 3.8 5.8 2 9 2 C12.2 2 15 3.8 15 6 C15 11 9 15 9 15Z" fill="#7a9e7e" opacity="0.6"/>
-                <path d="M9 15 L9 8" stroke="#5a7e5e" strokeWidth="1.2" strokeLinecap="round"/>
+              <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
+                <path d="M9 15 C9 15 3 11 3 6 C3 3.8 5.8 2 9 2 C12.2 2 15 3.8 15 6 C15 11 9 15 9 15Z" fill="#6b9ab8" opacity="0.7"/>
+                <path d="M9 15 L9 8" stroke="#4a7a9e" strokeWidth="1.2" strokeLinecap="round"/>
               </svg>
             </div>
             <div>
               <div
-                className="leading-none text-lg font-semibold tracking-tight"
+                className="leading-none text-xl font-semibold tracking-tight"
                 style={{ color: '#2c2416', fontFamily: '"Fraunces", Georgia, serif', fontVariationSettings: '"SOFT" 0, "WONK" 1' }}
               >
                 Eka-Eval
               </div>
               <div
-                className="text-[9px] uppercase tracking-[0.18em] leading-none mt-0.5"
+                className="text-[10px] uppercase tracking-[0.18em] leading-none mt-0.5"
                 style={{ color: '#9a9285' }}
               >
                 Evaluation Framework
@@ -76,12 +76,12 @@ const Header: React.FC = () => {
               return (
                 <Link key={item.path} to={item.path}>
                   <motion.div
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm transition-all duration-200"
+                    className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-[15px] transition-all duration-200"
                     style={{
                       fontWeight: 500,
-                      background: isActive ? '#d4e8d6' : 'transparent',
-                      color: isActive ? '#3d6b42' : '#6b6258',
-                      border: `1px solid ${isActive ? '#aed0b2' : 'transparent'}`,
+                      background: isActive ? '#d4e5f2' : 'transparent',
+                      color: isActive ? '#2d5a78' : '#6b6258',
+                      border: `1px solid ${isActive ? '#a8c5de' : 'transparent'}`,
                     }}
                     whileHover={{
                       background: '#ede8e0',
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.97 }}
                   >
-                    <Icon size={14} strokeWidth={isActive ? 2.2 : 1.6} />
+                    <Icon size={16} strokeWidth={isActive ? 2.2 : 1.6} />
                     <span>{item.label}</span>
                   </motion.div>
                 </Link>

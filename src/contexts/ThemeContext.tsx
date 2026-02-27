@@ -10,11 +10,11 @@ const LIGHT = `
   --border:       #e0d8cc;
   --border-md:    #d0c8bc;
 
-  --sage:         #7a9e7e;
-  --sage-lt:      #d4e8d6;
-  --sage-bd:      #aed0b2;
-  --sage-deep:    #3d6b42;
-  --sage-pill:    #eaf2eb;
+  --sage:         #6b9ab8;
+  --sage-lt:      #d4e5f2;
+  --sage-bd:      #a8c5de;
+  --sage-deep:    #2d5a78;
+  --sage-pill:    #eaf3fa;
 
   --rose:         #c9867c;
   --rose-lt:      #f5dbd8;

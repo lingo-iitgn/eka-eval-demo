@@ -19,7 +19,7 @@ const STEPS = [
   {
     id: 'model',
     label: 'Model Selection',
-    bg: '#d4e8d6', border: '#aed0b2', text: '#3d6b42', activeBg: '#eaf2eb',
+    bg: '#d4e5f2', border: '#a8c5de', text: '#2d5a78', activeBg: '#eaf3fa',
   },
   {
     id: 'benchmarks',
@@ -59,15 +59,15 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen pt-14"
-      style={{ background: '#f5f0e8', fontFamily: '"DM Sans", sans-serif' }}
+      className="min-h-screen pt-20"
+      style={{ background: '#ffffff', fontFamily: '"DM Sans", sans-serif' }}
     >
       {/* Step bar */}
       <div
         className="border-b mt-3"
-        style={{ background: '#fdf9f4', borderColor: '#e0d8cc' }}
+        style={{ background: '#ffffff', borderColor: '#e0d8cc' }}
       >
-        <div className="container mx-auto px-8">
+        <div className="max-w-[1440px] mx-auto px-10">
           <div className="flex overflow-x-auto">
             {STEPS.map((step, i) => {
               const isDone   = i < currentStepIndex;
@@ -91,9 +91,9 @@ const DashboardPage: React.FC = () => {
                   <span
                     className="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-semibold flex-shrink-0 leading-none"
                     style={{
-                      background: isActive ? step.bg : isDone ? '#d4e8d6' : '#ede8e0',
-                      color: isActive ? step.text : isDone ? '#3d6b42' : '#b8b0a8',
-                      border: `1px solid ${isActive ? step.border : isDone ? '#aed0b2' : '#ddd8d0'}`,
+                      background: isActive ? step.bg : isDone ? '#d4e5f2' : '#ede8e0',
+                      color: isActive ? step.text : isDone ? '#2d5a78' : '#b8b0a8',
+                      border: `1px solid ${isActive ? step.border : isDone ? '#a8c5de' : '#ddd8d0'}`,
                     }}
                   >
                     {isDone ? '✓' : i + 1}
@@ -116,7 +116,7 @@ const DashboardPage: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-8 py-10">
+      <div className="max-w-[1440px] mx-auto px-10 py-12">
         <motion.div
           key={currentStep}
           initial={{ opacity: 0, y: 12 }}
@@ -132,10 +132,10 @@ const DashboardPage: React.FC = () => {
             <div className="flex flex-col items-center text-center py-20 gap-4">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                style={{ background: '#d4e8d6', border: '1.5px solid #aed0b2' }}
+                style={{ background: '#d4e5f2', border: '1.5px solid #a8c5de' }}
               >
                 <svg width="24" height="18" viewBox="0 0 24 18" fill="none">
-                  <path d="M1.5 9L8.5 16L22.5 1.5" stroke="#3d6b42" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M1.5 9L8.5 16L22.5 1.5" stroke="#2d5a78" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <p

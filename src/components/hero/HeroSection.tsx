@@ -113,7 +113,7 @@ const HeroSection: React.FC = () => {
       {/* ── HERO ────────────────────────────────────────────── */}
       <section
         className="min-h-screen relative overflow-hidden"
-        style={{ background: '#f5f0e8' }}
+        style={{ background: '#ffffff' }}
       >
         {/* Noise texture overlay */}
         <div
@@ -132,7 +132,7 @@ const HeroSection: React.FC = () => {
               width: 520, height: 520,
               top: -120, right: -80,
               borderRadius: '60% 40% 70% 30% / 50% 60% 40% 50%',
-              background: 'radial-gradient(ellipse, #d4e8d640 0%, transparent 68%)',
+              background: 'radial-gradient(ellipse, #d4e5f240 0%, transparent 68%)',
             }}
           />
           <div
@@ -155,37 +155,7 @@ const HeroSection: React.FC = () => {
           />
         </div>
 
-        <div className="container mx-auto px-8 pt-20 pb-16 relative z-10">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-            className="flex items-center gap-3 mb-10"
-          >
-            <span
-              className="inline-flex items-center gap-2 text-[9px] font-semibold px-3 py-1.5 rounded-full tracking-wide"
-              style={{
-                background: '#d4e8d6',
-                border: '1px solid #aed0b2',
-                color: '#3d6b42',
-                fontFamily: FONT_BODY,
-              }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ background: '#7a9e7e' }}
-              />
-              Open Source · v1.0
-            </span>
-            <span
-              className="text-[11px] tracking-wider uppercase"
-              style={{ color: '#b0a898', fontFamily: FONT_BODY }}
-            >
-              IIT Gandhinagar
-            </span>
-          </motion.div>
-
+        <div className="container mx-auto px-8 pt-24 pb-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[76vh]">
             {/* Left column */}
             <div className="space-y-8">
@@ -228,8 +198,8 @@ const HeroSection: React.FC = () => {
                 className="flex flex-wrap gap-3"
               >
                 {[
-                  { n: '30+', l: 'Global benchmarks', bg: '#d4e8d6', border: '#aed0b2', c: '#3d6b42' },
-                  { n: '20+', l: 'Low-resource langs', bg: '#f5dbd8', border: '#ddb4ae', c: '#8f3d35' },
+                  { n: '55+', l: 'Global benchmarks', bg: '#d4e5f2', border: '#a8c5de', c: '#2d5a78' },
+                  { n: '120+', l: 'Low-resource langs', bg: '#f5dbd8', border: '#ddb4ae', c: '#8f3d35' },
                   { n: '8',   l: 'Task categories',   bg: '#f5e8cc', border: '#e0c888', c: '#7a5218' },
                 ].map((s) => (
                   <div
@@ -269,7 +239,7 @@ const HeroSection: React.FC = () => {
                     fontFamily: FONT_BODY,
                     boxShadow: '0 2px 12px #2c241628',
                   }}
-                  whileHover={{ background: '#3d6b42', y: -2, boxShadow: '0 8px 20px #3d6b4240' }}
+                  whileHover={{ background: '#2d5a78', y: -2, boxShadow: '0 8px 20px #2d5a7840' }}
                   whileTap={{ y: 0 }}
                 >
                   <Rocket size={14} strokeWidth={2} />
@@ -286,7 +256,7 @@ const HeroSection: React.FC = () => {
                     fontFamily: FONT_BODY,
                     border: '1.5px solid #ddd4c8',
                   }}
-                  whileHover={{ background: '#d4e8d6', borderColor: '#aed0b2', color: '#2d5030', y: -2 }}
+                  whileHover={{ background: '#d4e5f2', borderColor: '#a8c5de', color: '#1d3a58', y: -2 }}
                   whileTap={{ y: 0 }}
                 >
                   <BarChart3 size={14} strokeWidth={1.8} />
@@ -309,7 +279,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* ── FEATURES ────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: '#fdf9f4' }}>
+      <section className="py-24" style={{ background: '#ffffff' }}>
         <div className="container mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -320,17 +290,17 @@ const HeroSection: React.FC = () => {
             <div className="flex items-center justify-center gap-2.5 mb-3">
               <div
                 className="w-3.5 h-3.5 rounded-sm rotate-45"
-                style={{ background: '#d4e8d6', border: '1px solid #aed0b2' }}
+                style={{ background: '#d4e5f2', border: '1px solid #a8c5de' }}
               />
               <span
                 className="text-[11px] font-bold uppercase tracking-[0.2em]"
-                style={{ color: '#7a9e7e', fontFamily: FONT_BODY }}
+                style={{ color: '#6b9ab8', fontFamily: FONT_BODY }}
               >
                 Capabilities
               </span>
               <div
                 className="w-3.5 h-3.5 rounded-sm rotate-45"
-                style={{ background: '#d4e8d6', border: '1px solid #aed0b2' }}
+                style={{ background: '#d4e5f2', border: '1px solid #a8c5de' }}
               />
             </div>
             <h2
@@ -352,7 +322,7 @@ const HeroSection: React.FC = () => {
             <FeatureCard
               icon={Target} num="01"
               title="Comprehensive & Extensible Benchmarks"
-              desc="30+ global and 20+ low-resource multilingual benchmarks — from GSM8K to Flores-IN. Extend with custom tests via simple JSON configuration."
+              desc="32+ global and 23+ low-resource multilingual benchmarks — from GSM8K to Flores-IN. Extend with custom tests via simple JSON configuration."
               pal={FEATURE_PALETTES[0]} delay={0}
             />
             <FeatureCard
@@ -441,10 +411,10 @@ const HeroSection: React.FC = () => {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
-                    style={{ background: '#d4e8d6', border: '1px solid #aed0b2' }}
+                    style={{ background: '#d4e5f2', border: '1px solid #a8c5de' }}
                   >
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
-                      <path d="M1.5 8L7.5 14L18.5 1.5" stroke="#3d6b42" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M1.5 8L7.5 14L18.5 1.5" stroke="#2d5a78" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <p
@@ -538,7 +508,7 @@ const HeroSection: React.FC = () => {
                         color: '#f5f0e8',
                         fontFamily: FONT_BODY,
                       }}
-                      whileHover={{ background: '#3d6b42', y: -1 }}
+                      whileHover={{ background: '#2d5a78', y: -1 }}
                       whileTap={{ y: 0 }}
                     >
                       {isSubmitting ? <Loader2 size={13} className="animate-spin" /> : <Send size={13} />}

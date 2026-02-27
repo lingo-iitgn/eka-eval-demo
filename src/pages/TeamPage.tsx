@@ -13,9 +13,9 @@ import abhishekPic from '../assets/team/abhishekh.png';
 
 const faculty = [
   {
-    imageUrl: mayankPic, // Use the imported variable
+    imageUrl: mayankPic, 
     name: 'Prof. Mayank Singh',
-    role: 'Assistant Professor',
+    role: 'Associate Professor | IIT Gandhinagar',
     githubUrl: 'https://github.com/mayank4490/',
     linkedinUrl: 'https://www.linkedin.com/in/mayank-singh-b591a818/',
     websiteUrl: 'https://mayank4490.github.io/'
@@ -72,9 +72,9 @@ const TeamPage: React.FC = () => {
           <h1 className="text-5xl font-bold text-gray-700 dark:text-white">Meet the Team</h1>
           <p className="text-l text-gray-600 dark:text-gray-400 mt-4">
             The researchers and developers behind Eka-Eval. </p>
-            <p className="text-l text-gray-300 dark:text-gray-400 mt-4">
+            <p className="text-l text-gray-400 dark:text-gray-400 mt-4">
             In collaboration with Lingo Labs @IITGN and Soket AI.</p>
-<p className="text-l text-gray-200 dark:text-gray-400 mt-4">
+{/* <p className="text-l text-gray-200 dark:text-gray-400 mt-4">
   For <a 
     href="https://eka.soket.ai/" 
     target="_blank" 
@@ -83,7 +83,7 @@ const TeamPage: React.FC = () => {
   >
     Project Eka
   </a>
-</p>
+</p> */}
 
         </motion.div>
         

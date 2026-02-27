@@ -14,7 +14,7 @@ import {
 const F = '"Nunito", "Varela Round", sans-serif';
 const C = {
   bg: '#f5f0e8', card: '#fdf9f4', ink: '#2c2416', muted: '#7a6e62', faint: '#b0a898', border: '#e0d8cc',
-  sage: '#7a9e7e', sageLt: '#d4e8d6', sageBd: '#aed0b2', sageDeep: '#3d6b42', sagePill: '#eaf2eb',
+  sage: '#6b9ab8', sageLt: '#d4e5f2', sageBd: '#a8c5de', sageDeep: '#2d5a78', sagePill: '#eaf3fa',
   rose: '#c9867c', roseLt: '#f5dbd8', roseBd: '#ddb4ae', roseDeep: '#8f3d35', rosePill: '#faeeed',
   ochre: '#c9a96e', ochreLt: '#f5e8cc', ochreBd: '#e0c888', ochreDeep: '#7a5218', ochrePill: '#faf3e5',
   slate: '#6b7b8d', slateLt: '#d4dde8', slateBd: '#b0c0d0', slateDeep: '#3d5068', slatePill: '#edf1f5',
@@ -239,7 +239,7 @@ const LeaderboardTable: React.FC = () => {
         <motion.button onClick={() => window.location.href = '/dashboard/evaluate'}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold"
           style={{ background: '#2c2416', color: '#f5f0e8', fontFamily: F }}
-          whileHover={{ background: '#3d6b42' }}>
+          whileHover={{ background: '#2d5a78' }}>
           <Play size={14} /> Run Evaluation
         </motion.button>
       </div>
@@ -247,23 +247,9 @@ const LeaderboardTable: React.FC = () => {
   );
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1" style={{ color: C.ochre, fontFamily: F }}>Rankings</p>
-          <h2 className="text-3xl font-extrabold flex items-center gap-2.5" style={{ color: C.ink, fontFamily: F }}>
-            <Award size={28} color={C.ochre} /> Model Leaderboard
-          </h2>
-          <p className="text-sm" style={{ color: C.muted, fontFamily: F }}>
-            {models.length} evaluated model{models.length !== 1 ? 's' : ''}
-          </p>
-          <p className="text-xs mt-1" style={{ color: C.faint, fontFamily: F }}>
-            Scores are aggregated averages across multiple benchmarks, not single-benchmark results.
-          </p>
-        </div>
-
-        <div className="flex items-center flex-wrap gap-3">
+    <div className="space-y-5">
+      {/* Controls row */}
+      <div className="flex items-center justify-end flex-wrap gap-3">
           <AnimatePresence>
             {viewMode === 'table' && (
               <motion.div initial={{ opacity: 0, width: 0 }} animate={{ opacity: 1, width: 'auto' }} exit={{ opacity: 0, width: 0 }}>
@@ -309,7 +295,6 @@ const LeaderboardTable: React.FC = () => {
             whileHover={{ background: C.ochre, color: '#fdf9f4' }}>
             <Download size={14} /> Export CSV
           </motion.button>
-        </div>
       </div>
 
       {/* Stats row */}
