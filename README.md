@@ -10,7 +10,10 @@
 <img src="https://img.shields.io/badge/benchmarks-55%2B%20Supported-orange?style=for-the-badge" />
 </p>
 
-<p align="center"><b>EKA-EVAL Demo</b></p>
+<p align="center">
+<b>EKA-EVAL Demo</b>
+</p>
+
 <p align="center">
 Evaluation Framework for <b>Low-Resource Multilingual Large Language Models</b>
 </p>
@@ -25,249 +28,244 @@ Evaluation Framework for <b>Low-Resource Multilingual Large Language Models</b>
 
 # Overview
 
-**EKA-EVAL** is a unified framework for evaluating **Large Language Models (LLMs)** across **low-resource multilingual settings**.
+**EKA-EVAL** is a unified framework for evaluating **Large Language Models (LLMs)** across **low-resource multilingual languages**.
 
-Modern LLM evaluation frameworks often focus on high-resource languages and require complex command-line workflows. This creates barriers for researchers working with **Indic, African, and Southeast Asian languages**.
+Most existing evaluation frameworks focus heavily on **English and high-resource languages**, while requiring complex CLI workflows and configuration files.
 
-EKA-EVAL addresses this gap through a **Zero-Code Web Interface** that allows users to configure and run multilingual benchmarks directly from the browser.
+**EKA-EVAL solves this with a Zero-Code Web Interface**, enabling researchers to run multilingual evaluations directly from a browser.
 
-The framework integrates:
+### What the framework provides
 
-• **55+ benchmarks** across multiple evaluation categories
-• **23 multilingual datasets** targeting low-resource languages
-• **visual analytics and leaderboards** for model comparison
-• **automated AI-generated diagnostics** explaining model failures
+| Capability                 | Description                                       |
+| -------------------------- | ------------------------------------------------- |
+| 🌍 Multilingual Benchmarks | 55+ benchmarks including 23 multilingual datasets |
+| 🖥 Zero-Code UI            | Run evaluations without editing configs or code   |
+| 📊 Visual Analytics        | Interactive charts and model comparisons          |
+| 🤖 AI Diagnostics          | Automatic analysis of model failures              |
+| ⚡ Modular Framework        | Easily extend with new models and datasets        |
 
-The **eka-eval-demo repository** provides the **full UI-based evaluation platform**, combining a **React frontend** with a **FastAPI backend** for interactive benchmarking workflows.
-
-EKA-EVAL is designed to make **multilingual LLM evaluation accessible, reproducible, and scalable**. 
+The **eka-eval-demo repository** provides the **complete UI-based evaluation platform**, combining a **React frontend** with a **FastAPI backend**.
 
 ---
 
 # Zero-Code Evaluation Interface
 
-A key contribution of EKA-EVAL is its **web-based evaluation interface**, which enables end-to-end benchmarking without writing code.
+The **web interface** allows users to perform full evaluations without writing code.
 
-The UI allows researchers to:
+### Workflow
 
-• select benchmarks
-• configure prompts and inference settings
+```
+Select Model → Choose Benchmarks → Configure Parameters → Run Evaluation → Analyze Results
+```
+
+Users can:
+
+• select multilingual benchmarks
+• configure prompts and inference parameters
 • monitor evaluation progress
-• analyze results through interactive dashboards
-
-This removes the need for manual configuration files or complex CLI pipelines.
+• visualize benchmark performance
 
 ---
 
-# Key UI Features
-
-### Benchmark Selection Dashboard
-
-Users can create custom evaluation suites by selecting benchmarks from different categories.
-
-📷 **Screenshot Placeholder**
-
-```
-<img width="603" height="296" alt="Screenshot 2026-03-08 at 7 32 27 PM" src="https://github.com/user-attachments/assets/37d6f915-19e0-4c22-b3e6-044e5ae4ee34" />
-
-```
-
-The dashboard groups tasks into domains such as:
-
-• reasoning
-• code generation
-• multilingual QA
-• commonsense reasoning
+# UI Features
 
 ---
 
-### Advanced Configuration Panel
+## Benchmark Selection Dashboard
 
-The configuration interface enables users to adjust inference parameters such as:
+Users can build evaluation suites by selecting benchmarks from multiple categories.
 
-• temperature
-• batch size
-• decoding strategy
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/37d6f915-19e0-4c22-b3e6-044e5ae4ee34" />
+</div>
 
-It also includes a **GPU resource manager** for allocating compute resources during evaluation.
+Supported domains include:
 
-<img width="604" height="343" alt="Screenshot 2026-03-08 at 7 32 55 PM" src="https://github.com/user-attachments/assets/b1a12bef-f98a-4216-aa92-29bc53593c9b" />
+| Category        | Examples     |
+| --------------- | ------------ |
+| Reasoning       | ARC, MMLU    |
+| Code Generation | HumanEval    |
+| Commonsense     | HellaSwag    |
+| Multilingual QA | XQuAD, XorQA |
 
 ---
 
-### Prompt Customization Interface
+## Advanced Configuration Panel
 
-EKA-EVAL includes a visual **Prompt Editing Engine** that allows users to modify:
+Fine-tune evaluation settings directly in the UI.
+
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/b1a12bef-f98a-4216-aa92-29bc53593c9b" />
+</div>
+
+| Parameter        | Purpose                       |
+| ---------------- | ----------------------------- |
+| Temperature      | Controls randomness           |
+| Batch Size       | Optimizes GPU throughput      |
+| Top-p / decoding | Controls generation diversity |
+| GPU Manager      | Select compute resources      |
+
+---
+
+## Prompt Customization Interface
+
+Modify prompts without editing JSON configuration files.
+
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/022591fe-42a8-4f0f-8f9a-f16156915fd4" />
+</div>
+
+Users can edit:
 
 • system prompts
 • few-shot examples
-• template variables
-
-without editing configuration files.
-
-
-<img width="602" height="375" alt="Screenshot 2026-03-08 at 7 33 16 PM" src="https://github.com/user-attachments/assets/022591fe-42a8-4f0f-8f9a-f16156915fd4" />
-
-
+• prompt templates
 
 ---
 
-### Live Evaluation Dashboard
+## Live Evaluation Dashboard
 
-During evaluation, the system streams real-time progress including:
+Real-time monitoring of evaluation progress.
 
-• inference logs
-• benchmark progress
-• GPU utilization
-<img width="606" height="332" alt="Screenshot 2026-03-08 at 7 33 46 PM" src="https://github.com/user-attachments/assets/e9637bb5-30ba-49dc-a70b-17b309491776" />
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/e9637bb5-30ba-49dc-a70b-17b309491776" />
+</div>
 
+Displays:
 
----
-
-### AI Diagnosis Dashboard
-
-After evaluation, EKA-EVAL automatically analyzes results using a large language model.
-
-The system identifies:
-
-• model strengths
-• failure patterns
-• hallucination cases
-• weaknesses in low-resource languages
-
-Users can inspect individual failed predictions and see explanations for why the model likely failed.
-<img width="598" height="283" alt="Screenshot 2026-03-08 at 7 34 22 PM" src="https://github.com/user-attachments/assets/f4532567-1a39-4c00-b46d-e1ca44ba054b" />
+| Feature          | Description                   |
+| ---------------- | ----------------------------- |
+| Live Logs        | Streamed model inference logs |
+| Benchmark Status | Task progress tracking        |
+| GPU Usage        | Real-time resource monitoring |
 
 ---
 
-### Interactive Leaderboard
+## AI Diagnosis Dashboard
 
+Automatically analyzes model failures after evaluation.
 
-All evaluation runs are aggregated into a **dynamic leaderboard** that enables comparison across:
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/f4532567-1a39-4c00-b46d-e1ca44ba054b" />
+</div>
 
-• models
-• languages
-• benchmarks
+Provides insights such as:
 
-<img width="592" height="407" alt="Screenshot 2026-03-08 at 7 34 40 PM" src="https://github.com/user-attachments/assets/4872a697-76cf-4840-9033-356273435220" />
+• hallucination patterns
+• reasoning weaknesses
+• multilingual performance gaps
 
+---
 
-Visualizations include:
+## Interactive Leaderboard
 
-• radar charts
-• benchmark-wise bar charts
-• performance summaries
+Compare models across benchmarks and languages.
 
+<div align="center">
+<img width="700" src="https://github.com/user-attachments/assets/4872a697-76cf-4840-9033-356273435220" />
+</div>
 
-<img width="590" height="520" alt="Screenshot 2026-03-08 at 7 35 00 PM" src="https://github.com/user-attachments/assets/4b37436e-e5a9-424f-a118-12a32ce22124" />
+### Visualization Examples
 
-<img width="597" height="484" alt="Screenshot 2026-03-08 at 7 35 14 PM" src="https://github.com/user-attachments/assets/c1d67f61-3830-4211-85d7-106b60cb46fa" />
+<div align="center">
+<img width="600" src="https://github.com/user-attachments/assets/4b37436e-e5a9-424f-a118-12a32ce22124" />
+</div>
 
+<div align="center">
+<img width="600" src="https://github.com/user-attachments/assets/c1d67f61-3830-4211-85d7-106b60cb46fa" />
+</div>
+
+| Visualization | Purpose                   |
+| ------------- | ------------------------- |
+| Radar Charts  | Compare model strengths   |
+| Bar Charts    | Benchmark score breakdown |
+| Leaderboards  | Model ranking             |
 
 ---
 
 # Low-Resource Multilingual Benchmark Suite
 
-EKA-EVAL provides one of the **largest unified multilingual evaluation suites**.
-
-These benchmarks evaluate model performance across languages that are typically underrepresented in LLM research.
+EKA-EVAL includes one of the **largest multilingual evaluation suites** for LLMs.
 
 ### Knowledge & Reasoning
 
-IndicMMLU-Pro
-MMLU-IN
-MILU
-TriviaQA-IN
-ARC-Challenge-Indic
+| Benchmark           | Description                              |
+| ------------------- | ---------------------------------------- |
+| IndicMMLU-Pro       | Indic multi-task reasoning               |
+| MMLU-IN             | Multilingual reasoning                   |
+| MILU                | Indic language understanding             |
+| TriviaQA-IN         | Multilingual QA                          |
+| ARC-Challenge-Indic | Science reasoning across Indic languages |
+
+---
 
 ### Reading & Question Answering
 
-Belebele (122 languages)
-XQuAD-Indic
-XorQA-Indic
-BoolQ-Indic
-Indic-QA
+| Benchmark   | Languages       |
+| ----------- | --------------- |
+| Belebele    | 122 languages   |
+| XQuAD-Indic | Hindi, Greek    |
+| XorQA-Indic | Bengali, Telugu |
+| BoolQ-Indic | Indic languages |
+| Indic-QA    | Multilingual QA |
+
+---
 
 ### Natural Language Understanding
 
-IndicNER
-IndicSentiment
-IndicGLUE
-XNLI
+| Benchmark      | Task                     |
+| -------------- | ------------------------ |
+| IndicNER       | Named entity recognition |
+| IndicSentiment | Sentiment classification |
+| IndicGLUE      | Multilingual NLU         |
+| XNLI           | Cross-lingual inference  |
+
+---
 
 ### Multilingual Generation
 
-Flores-IN
-IndicWikiBio
-IndicParaphrase
+| Benchmark       | Task                    |
+| --------------- | ----------------------- |
+| Flores-IN       | Translation             |
+| IndicWikiBio    | Biographical generation |
+| IndicParaphrase | Paraphrase generation   |
 
-These benchmarks cover languages such as:
+Supported languages include:
 
-Hindi
-Bengali
-Kannada
-Malayalam
-Odia
-Swahili
-Yoruba
-Telugu
+Hindi • Bengali • Kannada • Malayalam • Odia • Telugu • Swahili • Yoruba
 
 ---
 
 # System Architecture
 
-EKA-EVAL follows a modular architecture consisting of four main components.
+EKA-EVAL follows a **four-layer modular architecture**.
 
-### Evaluation Engine
-
-Handles evaluation scheduling, batching, and distributed inference across benchmarks.
-
-### Benchmark Registry
-
-Provides a standardized interface for loading datasets from:
-
-• HuggingFace Hub
-• local datasets
-• custom evaluation datasets
-
-### Model Interface Layer
-
-Supports both:
-
-• local transformer checkpoints
-• API-based models
-
-### Results Processing System
-
-Computes metrics such as:
-
-• Accuracy
-• BLEU
-• F1 Score
-• Exact Match
-• Pass@1
-
-and generates visual analytics.
+| Layer              | Responsibility                                   |
+| ------------------ | ------------------------------------------------ |
+| Evaluation Engine  | task scheduling, batching, distributed inference |
+| Benchmark Registry | dataset loading and benchmark configuration      |
+| Model Interface    | local models + API models                        |
+| Results Processor  | metrics computation and visualization            |
 
 ---
 
 # Installation
 
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/lingo-iitgn/eka-eval-demo.git
 cd eka-eval-demo
 ```
 
-Create a Python environment:
+Create environment
 
 ```bash
 conda create -n eka-env python=3.10 pip -y
 conda activate eka-env
 ```
 
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -277,16 +275,16 @@ pip install -r requirements.txt
 
 # Running the Application
 
-The demo platform consists of:
+The demo platform consists of two services.
 
-• **FastAPI Backend**
-• **React Frontend**
-
-Both services must be started separately.
+| Service  | Technology |
+| -------- | ---------- |
+| Backend  | FastAPI    |
+| Frontend | React      |
 
 ---
 
-# Start Backend
+## Start Backend
 
 ```bash
 uvicorn main:app --reload
@@ -300,23 +298,11 @@ http://127.0.0.1:8000
 
 ---
 
-# Start Frontend
-
-Navigate to the frontend directory:
+## Start Frontend
 
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Run the development server:
-
-```bash
 npm run dev
 ```
 
@@ -330,7 +316,7 @@ http://localhost:5173
 
 # Citation
 
-If you use EKA-EVAL in your research, please cite:
+If you use EKA-EVAL in your research:
 
 ```bibtex
 @misc{sinha2025ekaeval,
@@ -342,4 +328,3 @@ url={https://github.com/lingo-iitgn/eka-eval}
 ```
 
 ---
-
