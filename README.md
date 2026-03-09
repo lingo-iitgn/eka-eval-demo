@@ -319,11 +319,13 @@ http://localhost:5173
 If you use EKA-EVAL in your research:
 
 ```bibtex
-@misc{sinha2025ekaeval,
-title={EKA-EVAL : An Evaluation Framework for Low-Resource Multilingual Large Language Models},
-author={Samridhi Raj Sinha and Rajvee Sheth and Abhishek Upperwal and Mayank Singh},
-year={2025},
-url={https://github.com/lingo-iitgn/eka-eval}
+@misc{sinha2025ekaevalcomprehensiveevaluation,
+      title={Eka-Eval : A Comprehensive Evaluation Framework for Large Language Models in Indian Languages}, 
+      author={Samridhi Raj Sinha and Rajvee Sheth and Abhishek Upperwal and Mayank Singh},
+      year={2025},
+      eprint={2507.01853},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
