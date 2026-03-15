@@ -1,0 +1,18 @@
+{
+  "indicmmlu_pro_0shot": {
+    "description": "Zero-shot prompt for IndicMMLU-Pro with standard Q&A format",
+    "template": "Question: {question}\n\nOptions:\n{choices_str}\n\nAnswer:",
+    "language_specific_prompts": {
+      "default": "Question: {question}\n\nOptions:\n{choices_str}\n\nAnswer:",
+      "hindi": "प्रश्न: {question}\n\nविकल्प:\n{choices_str}\n\nउत्तर:",
+      "bengali": "প্রশ্ন: {question}\n\nবিকল্প:\n{choices_str}\n\nউত্তর:",
+      "gujarati": "પ્રશ્ન: {question}\n\nવિકલ્પો:\n{choices_str}\n\nજવાબ:",
+      "kannada": "ಪ್ರಶ್ನೆ: {question}\n\nಆಯ್ಕೆಗಳು:\n{choices_str}\n\nಉತ್ತರ:",
+      "marathi": "प्रश्न: {question}\n\nपर्याय:\n{choices_str}\n\nउत्तर:",
+      "punjabi": "ਪ੍ਰਸ਼ਨ: {question}\n\nਵਿਕਲਪ:\n{choices_str}\n\nਜਵਾਬ:",
+      "tamil": "கேள்வி: {question}\n\nவிருப்பங்கள்:\n{choices_str}\n\nபதில்:",
+      "telugu": "ప్రశ్న: {question}\n\nఎంపికలు:\n{choices_str}\n\nసమాధానం:",
+      "urdu": "سوال: {question}\n\nاختیارات:\n{choices_str}\n\nجواب:"
+    }
+  }
+}

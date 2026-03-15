@@ -1,0 +1,63 @@
+{
+  "indicparaphrase_in_0shot": {
+    "template": "इनपुट: {input_text}\n\nपैराफ्रेज:",
+    "description": "Zero-shot IndicParaphrase prompt - paraphrase generation",
+    "language_specific_prompts": {
+      "hi": "इनपुट: {input_text}\n\nपैराफ्रेज:",
+      "bn": "ইনপুট: {input_text}\n\nপ্যারাফ্রেজ:",
+      "gu": "ઇનપુટ: {input_text}\n\nપેરાફ્રેઝ:",
+      "kn": "ಇನ್‌ಪುಟ್: {input_text}\n\nಪ್ಯಾರಾಫ್ರೇಜ್:",
+      "ml": "ഇൻപുട്ട്: {input_text}\n\nപാരാഫ്രേസ്:",
+      "mr": "इनपुट: {input_text}\n\nपॅराफ्रेज:",
+      "or": "ଇନପୁଟ୍: {input_text}\n\nପାରାଫ୍ରେଜ୍:",
+      "pa": "ਇਨਪੁੱਟ: {input_text}\n\nਪੈਰਾਫ੍ਰੇਜ਼:",
+      "ta": "உள்ளீடு: {input_text}\n\nபேராஃப்ரேஸ்:",
+      "te": "ఇన్‌పుట్: {input_text}\n\nపారాఫ్రేజ్:",
+      "as": "ইনপুট: {input_text}\n\nপেৰাফ্ৰেজ:",
+      "default": "इनपुट: {input_text}\n\nपैराफ्रेज:"
+    }
+  },
+  "indicparaphrase_in_5shot": {
+    "template_prefix": "निम्नलिखित उदाहरणों से सीखें और फिर नए इनपुट का पैराफ्रेज बनाएं।\n\n",
+    "few_shot_example_template": "इनपुट: {input_text}\n\nपैराफ्रेज: {paraphrase}",
+    "few_shot_separator": "\n\n",
+    "template_suffix": "इनपुट: {input_text}\n\nपैराफ्रेज:",
+    "description": "Few-shot IndicParaphrase prompt template",
+    "language_specific_prompts": {
+      "hi": {
+        "few_shot_example_template": "इनपुट: {input_text}\n\nपैराफ्रेज: {paraphrase}",
+        "template_suffix": "इनपुट: {input_text}\n\nपैराफ्रेज:"
+      },
+      "bn": {
+        "few_shot_example_template": "ইনপুট: {input_text}\n\nপ্যারাফ্রেজ: {paraphrase}",
+        "template_suffix": "ইনপুট: {input_text}\n\nপ্যারাফ্রেজ:"
+      },
+      "default": {
+        "few_shot_example_template": "इनपुट: {input_text}\n\nपैराफ्रेज: {paraphrase}",
+        "template_suffix": "इनपुट: {input_text}\n\nपैराफ्रेज:"
+      }
+    }
+  },
+  "default_few_shot_examples_indicparaphrase": [
+    {
+      "input_text": "निजी क्षेत्र में प्रदेश की 75 प्रतिशत नौकरियां हरियाणा के युवाओं के लिए आरक्षित की जाएगी।",
+      "paraphrase": "प्रदेश के युवाओं को निजी उद्योगों में 75 प्रतिशत आरक्षण देंगे।"
+    },
+    {
+      "input_text": "भारत में कोरोना वायरस के मामले तेजी से बढ़ रहे हैं।",
+      "paraphrase": "देश में कोविड-19 संक्रमण की दर में तेजी देखी जा रही है।"
+    },
+    {
+      "input_text": "सरकार ने किसानों के लिए नई योजना की घोषणा की है।",
+      "paraphrase": "सरकार द्वारा किसानों के लाभ हेतु एक नवीन योजना प्रस्तुत की गई है।"
+    },
+    {
+      "input_text": "मौसम विभाग ने अगले 24 घंटों में भारी बारिश की चेतावनी जारी की है।",
+      "paraphrase": "अगले दिन भर तेज वर्षा होने की संभावना है, मौसम विभाग ने चेतावनी दी।"
+    },
+    {
+      "input_text": "शिक्षा मंत्री ने नई शिक्षा नीति पर चर्चा की।",
+      "paraphrase": "शिक्षा मंत्री द्वारा नवीन शैक्षिक नीति पर विचार-विमर्श किया गया।"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "indicglue_0shot": {
+    "template": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:",
+    "description": "Zero-shot IndicGLUE sentiment classification prompt",
+    "language_specific_prompts": {
+      "Hindi": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:",
+      "Bengali": "পাঠ্য: {text}\n\nবিকল্প:\n{choices_str}\n\nঅনুভূতি:",
+      "Gujarati": "ટેક્સ્ટ: {text}\n\nવિકલ્પો:\n{choices_str}\n\nભાવના:",
+      "Kannada": "ಪಠ್ಯ: {text}\n\nಆಯ್ಕೆಗಳು:\n{choices_str}\n\nಭಾವನೆ:",
+      "Malayalam": "വാചകം: {text}\n\nഓപ്ഷനുകൾ:\n{choices_str}\n\nവികാരം:",
+      "Marathi": "मजकूर: {text}\n\nपर्याय:\n{choices_str}\n\nभावना:",
+      "Odia": "ପାଠ: {text}\n\nବିକଳ୍ପ:\n{choices_str}\n\nଭାବନା:",
+      "Punjabi": "ਟੈਕਸਟ: {text}\n\nਵਿਕਲਪ:\n{choices_str}\n\nਭਾਵਨਾ:",
+      "Tamil": "உரை: {text}\n\nவிருப்பங்கள்:\n{choices_str}\n\nஉணர்வு:",
+      "Telugu": "వచనం: {text}\n\nఎంపికలు:\n{choices_str}\n\nభావన:",
+      "default": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:"
+    },
+    "default_label_mapping": {
+      "negative": "A",
+      "neutral": "B",
+      "positive": "C"
+    },
+    "task_label_mappings": {
+      "actsa-sc": {
+        "negative": "A",
+        "neutral": "B",
+        "positive": "C"
+      }
+    }
+  },
+  "indicglue_5shot": {
+    "template_prefix": "",
+    "few_shot_example_template": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना: {answer_letter}",
+    "few_shot_separator": "\n\n",
+    "template_suffix": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:",
+    "description": "Few-shot IndicGLUE prompt template",
+    "language_specific_prompts": {
+      "Hindi": {
+        "few_shot_example_template": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना: {answer_letter}",
+        "template_suffix": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:"
+      },
+      "Bengali": {
+        "few_shot_example_template": "পাঠ্য: {text}\n\nবিকল্প:\n{choices_str}\n\nঅনুভূতি: {answer_letter}",
+        "template_suffix": "পাঠ্য: {text}\n\nবিকল্প:\n{choices_str}\n\nঅনুভূতি:"
+      },
+      "Tamil": {
+        "few_shot_example_template": "உரை: {text}\n\nவிருப்பங்கள்:\n{choices_str}\n\nஉணர்வு: {answer_letter}",
+        "template_suffix": "உரை: {text}\n\nவிருப்பங்கள்:\n{choices_str}\n\nஉணர்வு:"
+      },
+      "default": {
+        "few_shot_example_template": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना: {answer_letter}",
+        "template_suffix": "पाठ: {text}\n\nविकल्प:\n{choices_str}\n\nभावना:"
+      }
+    },
+    "default_label_mapping": {
+      "negative": "A",
+      "neutral": "B",
+      "positive": "C"
+    },
+    "task_label_mappings": {
+      "actsa-sc": {
+        "negative": "A",
+        "neutral": "B",
+        "positive": "C"
+      }
+    }
+  },
+  "default_few_shot_examples_indicglue": [
+    {
+      "text": "यह फिल्म बहुत अच्छी थी",
+      "choices_str": "A. negative\nB. neutral\nC. positive",
+      "answer_letter": "C"
+    },
+    {
+      "text": "सेवा बहुत खराब थी",
+      "choices_str": "A. negative\nB. neutral\nC. positive",
+      "answer_letter": "A"
+    },
+    {
+      "text": "यह ठीक है",
+      "choices_str": "A. negative\nB. neutral\nC. positive",
+      "answer_letter": "B"
+    },
+    {
+      "text": "उत्कृष्ट अनुभव",
+      "choices_str": "A. negative\nB. neutral\nC. positive",
+      "answer_letter": "C"
+    },
+    {
+      "text": "निराशाजनक परिणाम",
+      "choices_str": "A. negative\nB. neutral\nC. positive",
+      "answer_letter": "A"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "indicqg_0shot": {
+    "template": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nइस संदर्भ और उत्तर के आधार पर एक प्रश्न बनाएं:\n\nप्रश्न:",
+    "description": "Zero-shot question generation prompt for Indic languages",
+    "language_specific_prompts": {
+      "Assamese": "প্ৰসংগ: {context}\n\nউত্তৰ: {answer}\n\nএই প্ৰসংগ আৰু উত্তৰৰ ওপৰত ভিত্তি কৰি এটা প্ৰশ্ন সৃষ্টি কৰক:\n\nপ্ৰশ্ন:",
+      "Bengali": "প্রসঙ্গ: {context}\n\nউত্তর: {answer}\n\nএই প্রসঙ্গ এবং উত্তরের উপর ভিত্তি করে একটি প্রশ্ন তৈরি করুন:\n\nপ্রশ্ন:",
+      "Gujarati": "સંદર્ભ: {context}\n\nજવાબ: {answer}\n\nઆ સંદર્ભ અને જવાબના આધારે એક પ્રશ્ન બનાવો:\n\nપ્રશ્ન:",
+      "Hindi": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nइस संदर्भ और उत्तर के आधार पर एक प्रश्न बनाएं:\n\nप्रश्न:",
+      "Kannada": "ಸಂದರ್ಭ: {context}\n\nಉತ್ತರ: {answer}\n\nಈ ಸಂದರ್ಭ ಮತ್ತು ಉತ್ತರದ ಆಧಾರದ ಮೇಲೆ ಒಂದು ಪ್ರಶ್ನೆಯನ್ನು ರಚಿಸಿ:\n\nಪ್ರಶ್ನೆ:",
+      "Malayalam": "സന്ദർഭം: {context}\n\nഉത്തരം: {answer}\n\nഈ സന്ദർഭവും ഉത്തരവും അടിസ്ഥാനമാക്കി ഒരു ചോദ്യം സൃഷ്ടിക്കുക:\n\nചോദ്യം:",
+      "Marathi": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nया संदर्भ आणि उत्तरावर आधारित एक प्रश्न तयार करा:\n\nप्रश्न:",
+      "Odia": "ପ୍ରସଙ୍ଗ: {context}\n\nଉତ୍ତର: {answer}\n\nଏହି ପ୍ରସଙ୍ଗ ଏବଂ ଉତ୍ତର ଉପରେ ଆଧାର କରି ଏକ ପ୍ରଶ୍ନ ସୃଷ୍ଟି କରନ୍ତୁ:\n\nପ୍ରଶ୍ନ:",
+      "Punjabi": "ਸੰਦਰਭ: {context}\n\nਜਵਾਬ: {answer}\n\nਇਸ ਸੰਦਰਭ ਅਤੇ ਜਵਾਬ ਦੇ ਆਧਾਰ 'ਤੇ ਇੱਕ ਸਵਾਲ ਬਣਾਓ:\n\nਸਵਾਲ:",
+      "Tamil": "சூழல்: {context}\n\nபதில்: {answer}\n\nஇந்த சூழல் மற்றும் பதிலின் அடிப்படையில் ஒரு கேள்வியை உருவாக்கவும்:\n\nகேள்வி:",
+      "Telugu": "సందర్భం: {context}\n\nసమాధానం: {answer}\n\nఈ సందర్భం మరియు సమాధానం ఆధారంగా ఒక ప్రశ్నను రూపొందించండి:\n\nప్రశ్న:",
+      "default": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nइस संदर्भ और उत्तर के आधार पर एक प्रश्न बनाएं:\n\nप्रश्न:"
+    }
+  },
+  "indicqg_3shot": {
+    "template_prefix": "निम्नलिखित उदाहरण देखें:\n\n",
+    "few_shot_example_template": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न: {question}",
+    "few_shot_separator": "\n\n---\n\n",
+    "template_suffix": "अब इस के लिए:\n\nसंदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न:",
+    "description": "Few-shot question generation prompt",
+    "language_specific_prompts": {
+      "Hindi": {
+        "few_shot_example_template": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न: {question}",
+        "template_suffix": "अब इस के लिए:\n\nसंदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न:"
+      },
+      "Bengali": {
+        "few_shot_example_template": "প্রসঙ্গ: {context}\n\nউত্তর: {answer}\n\nপ্রশ্ন: {question}",
+        "template_suffix": "এখন এর জন্য:\n\nপ্রসঙ্গ: {context}\n\nউত্তর: {answer}\n\nপ্রশ্ন:"
+      },
+      "default": {
+        "few_shot_example_template": "संदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न: {question}",
+        "template_suffix": "अब इस के लिए:\n\nसंदर्भ: {context}\n\nउत्तर: {answer}\n\nप्रश्न:"
+      }
+    }
+  },
+  "default_few_shot_examples_indicqg": [
+    {
+      "context": "भारत की राजधानी नई दिल्ली है। यह देश का राजनीतिक केंद्र है।",
+      "answer": "नई दिल्ली",
+      "question": "भारत की राजधानी क्या है?"
+    },
+    {
+      "context": "ताजमहल आगरा में स्थित है। इसे शाहजहां ने बनवाया था।",
+      "answer": "शाहजहां",
+      "question": "ताजमहल किसने बनवाया था?"
+    },
+    {
+      "context": "भारत में 28 राज्य और 8 केंद्र शासित प्रदेश हैं।",
+      "answer": "28",
+      "question": "भारत में कितने राज्य हैं?"
+    }
+  ]
+}
